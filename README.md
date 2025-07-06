@@ -1,37 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# metaLineConv
 
-## Getting Started
+## プロジェクト概要
 
-First, run the development server:
+このリポジトリは、Meta広告からの流入を想定したランディングページ（LP）をNext.jsで作成し、  
+ユーザーのLINE公式アカウント登録を促進、さらにConversions APIを使ってMetaにコンバージョン情報を送信する検証用プロジェクトです。
+
+---
+
+## Next.js プロジェクト作成時の設定
+
+- TypeScript: **Yes**
+- ESLint: **Yes**
+- Tailwind CSS: **Yes**
+- コードを `src/` ディレクトリに配置: **Yes**
+- App Router: **Yes（推奨）**
+- Turbopack for `next dev`: **Yes**
+- インポートエイリアス（デフォルト `@/*`）: **Yes**
+- インポートエイリアスの設定: `@/*`
+
+---
+
+## 目的・今後の予定
+
+- Meta広告のクリックからLP表示  
+- LINE公式アカウント登録ボタン設置と誘導  
+- コンバージョン発生時にMeta Conversions APIでイベント送信  
+- Vercelへの自動デプロイ設定  
+- 環境変数によるLINE URL管理  
+- フロントとバックエンドの連携検証  
+
+---
+
+## 開発・起動方法
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# metaLineConvTest
