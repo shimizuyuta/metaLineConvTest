@@ -1,5 +1,24 @@
+'use client';
+
+declare global {
+  interface Window {
+    fbq: (action: string, event: string, params?: Record<string, string>) => void;
+  }
+}
+
 export default function Home() {
   const lineUrl = "https://line.me/R/ti/p/YOUR_LINE_ID";
+  const pixelId = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID;
+
+  const handleLineClick = (buttonLocation: string) => {
+    if (typeof window !== 'undefined' && window.fbq && pixelId) {
+      window.fbq('track', 'Lead', {
+        content_name: 'LINE Registration',
+        content_category: 'Contact',
+        button_location: buttonLocation,
+      });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
@@ -25,6 +44,7 @@ export default function Home() {
             </p>
             <a
               href={lineUrl}
+              onClick={() => handleLineClick('hero-section')}
               className="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-colors duration-300 shadow-lg"
             >
               🎉 LINE登録で特別価格をGET！
@@ -119,6 +139,7 @@ export default function Home() {
             </p>
             <a
               href={lineUrl}
+              onClick={() => handleLineClick('bottom-section')}
               className="inline-block bg-white text-green-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-full text-lg transition-colors duration-300 shadow-lg"
             >
               LINE友達追加はこちら
